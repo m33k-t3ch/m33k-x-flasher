@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>M33K X Web Flasher</title>
+  <meta name="description" content="Browser-based installer for M33K X Watch and XIAO ESP32-C5 firmware." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">M33K X</p>
+      <h1>Web Flasher</h1>
+      <p class="lead">One browser installer for the LilyGO T-Watch Ultra and the Seeed XIAO ESP32-C5 companion.</p>
+    </section>
+
+    <section class="status-card">
+      <div class="status-dot"></div>
+      <div>
+        <strong>Installer staging build</strong>
+        <p>The page is ready, but public-safe firmware packages have not been added yet.</p>
+      </div>
+    </section>
+
+    <section class="device-grid">
+      <article class="device-card">
+        <div class="chip">ESP32-S3</div>
+        <h2>M33K X Watch</h2>
+        <p>LilyGO T-Watch Ultra</p>
+      </article>
+
+      <article class="device-card">
+        <div class="chip">ESP32-C5</div>
+        <h2>M33K X C5</h2>
+        <p>Seeed XIAO ESP32-C5 companion</p>
+      </article>
+    </section>
+
+    <section class="install-card">
+      <h2>Install M33K X</h2>
+      <p>When the release firmware is ready, this button will automatically select the correct image for the connected ESP32-S3 or ESP32-C5.</p>
+      <button class="install-button" disabled>Firmware package pending</button>
+      <p class="fine">Use a USB data cable. Web flashing requires a supported browser and HTTPS.</p>
+    </section>
+
+    <section class="steps">
+      <h2>Planned flow</h2>
+      <ol>
+        <li>Connect the T-Watch Ultra and flash the Watch build.</li>
+        <li>Connect the XIAO ESP32-C5 and flash the C5 build.</li>
+        <li>Pair the Watch and C5 using device-specific enrollment.</li>
+      </ol>
+    </section>
+
+    <footer>
+      <span>M33K X</span>
+      <span>Private staging flasher</span>
+    </footer>
+  </main>
+</body>
+</html>
