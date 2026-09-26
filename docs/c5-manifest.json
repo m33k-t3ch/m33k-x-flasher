@@ -1,0 +1,16 @@
+{
+  "name": "M33K X C5",
+  "version": "0.1.2-public-test",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32-C5",
+      "parts": [
+        {
+          "path": "firmware/c5/m33k-x-c5-merged.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
