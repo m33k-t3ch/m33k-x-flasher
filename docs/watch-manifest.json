@@ -1,0 +1,16 @@
+{
+  "name": "M33K X Watch",
+  "version": "0.6.0g-public-test",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "firmware/watch/m33k-x-watch-merged.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
