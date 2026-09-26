@@ -38,21 +38,36 @@
           }
 
           const materialDialog = root.querySelector("ew-dialog");
-          const materialRoot = materialDialog && materialDialog.shadowRoot;
-          if (materialRoot && !materialRoot.querySelector("#m33k-material-dialog-style")) {
-            const style = document.createElement("style");
-            style.id = "m33k-material-dialog-style";
-            style.textContent = `
-              .container {
-                background: #02050b !important;
-                color: #b6ff00 !important;
-                border: 1px solid rgba(182,255,0,.42) !important;
-                box-shadow:
-                  0 22px 80px rgba(0,0,0,.72),
-                  0 0 34px rgba(182,255,0,.10) !important;
-              }
-            `;
-            materialRoot.appendChild(style);
+          if (materialDialog) {
+            materialDialog.style.setProperty("--md-dialog-container-color", "#02050b");
+            materialDialog.style.setProperty("--md-dialog-headline-color", "#b6ff00");
+            materialDialog.style.setProperty("--md-dialog-supporting-text-color", "#b6ff00");
+            materialDialog.style.setProperty("--md-sys-color-surface-container-high", "#02050b");
+            materialDialog.style.setProperty("--md-sys-color-on-surface", "#b6ff00");
+            materialDialog.style.setProperty("--md-sys-color-on-surface-variant", "#b6ff00");
+
+            const materialRoot = materialDialog.shadowRoot;
+            if (materialRoot && !materialRoot.querySelector("#m33k-material-dialog-style")) {
+              const style = document.createElement("style");
+              style.id = "m33k-material-dialog-style";
+              style.textContent = `
+                dialog,
+                .container,
+                .surface {
+                  background: #02050b !important;
+                  background-color: #02050b !important;
+                  color: #b6ff00 !important;
+                }
+
+                .container {
+                  border: 1px solid rgba(182,255,0,.42) !important;
+                  box-shadow:
+                    0 22px 80px rgba(0,0,0,.72),
+                    0 0 34px rgba(182,255,0,.10) !important;
+                }
+              `;
+              materialRoot.appendChild(style);
+            }
           }
         });
       };
