@@ -1,22 +1,11 @@
-# M33K X Flasher security notes
+# Security
 
-This repository is intended to become the public distribution point for M33K X release firmware.
+M33K X release firmware is built so public packages do not contain personal credentials, API keys, private development configuration, or a universal production Watch-to-C5 secret.
 
-## Never publish
+## Device pairing
 
-- personal Wi-Fi credentials
-- API keys or access tokens
-- private keys or signing secrets
-- local development configuration
-- a universal production Watch <-> C5 authentication secret
-- personal filesystem paths or identifying development data
+The Watch and C5 use first-time device-specific enrollment so each paired set establishes its own pairing key.
 
-## Watch <-> C5 release requirement
+## Reporting a security issue
 
-The private development builds currently use a local shared key that is intentionally excluded from source control. Public release binaries must not embed that private development key.
-
-The public release path should use first-time Watch <-> C5 enrollment so each paired device set establishes its own credentials.
-
-## Release gate
-
-The web install button stays disabled until both firmware images are sanitized, merged, hardware-tested, and verified to work through ESP Web Tools.
+If you discover a security issue in M33K X firmware or the web flasher, please report it privately to the repository owner before publishing technical details.
