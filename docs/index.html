@@ -7,56 +7,70 @@
   <title>M33K X Web Flasher</title>
   <meta name="description" content="Browser-based installer for M33K X Watch and XIAO ESP32-C5 firmware." />
   <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
 </head>
 <body>
   <main class="shell">
     <section class="hero">
       <p class="eyebrow">M33K X</p>
       <h1>Web Flasher</h1>
-      <p class="lead">One browser installer for the LilyGO T-Watch Ultra and the Seeed XIAO ESP32-C5 companion.</p>
+      <p class="lead">Install the M33K X public-test firmware directly from a supported desktop browser.</p>
     </section>
 
     <section class="status-card">
       <div class="status-dot"></div>
       <div>
-        <strong>Installer staging build</strong>
-        <p>The page is ready, but public-safe firmware packages have not been added yet.</p>
+        <strong>Public-test firmware loaded</strong>
+        <p>Watch and C5 browser-install packages are staged. Flash each device separately, then let them establish their own pairing.</p>
       </div>
     </section>
 
     <section class="device-grid">
-      <article class="device-card">
+      <article class="device-card install-device">
         <div class="chip">ESP32-S3</div>
         <h2>M33K X Watch</h2>
-        <p>LilyGO T-Watch Ultra</p>
+        <p class="device-name">LilyGO T-Watch Ultra</p>
+        <p class="device-note">Connect the Watch by USB, then start the installer below.</p>
+
+        <esp-web-install-button manifest="watch-manifest.json">
+          <button class="install-button watch-button" slot="activate">Install Watch</button>
+          <span class="unsupported" slot="unsupported">Use a desktop browser with Web Serial support.</span>
+          <span class="unsupported" slot="not-allowed">The installer must be opened over HTTPS or localhost.</span>
+        </esp-web-install-button>
       </article>
 
-      <article class="device-card">
+      <article class="device-card install-device">
         <div class="chip">ESP32-C5</div>
         <h2>M33K X C5</h2>
-        <p>Seeed XIAO ESP32-C5 companion</p>
-      </article>
-    </section>
+        <p class="device-name">Seeed XIAO ESP32-C5 companion</p>
+        <p class="device-note">Connect the C5 by USB, then start the installer below.</p>
 
-    <section class="install-card">
-      <h2>Install M33K X</h2>
-      <p>When the release firmware is ready, this button will automatically select the correct image for the connected ESP32-S3 or ESP32-C5.</p>
-      <button class="install-button" disabled>Firmware package pending</button>
-      <p class="fine">Use a USB data cable. Web flashing requires a supported browser and HTTPS.</p>
+        <esp-web-install-button manifest="c5-manifest.json">
+          <button class="install-button c5-button" slot="activate">Install C5</button>
+          <span class="unsupported" slot="unsupported">Use a desktop browser with Web Serial support.</span>
+          <span class="unsupported" slot="not-allowed">The installer must be opened over HTTPS or localhost.</span>
+        </esp-web-install-button>
+      </article>
     </section>
 
     <section class="steps">
-      <h2>Planned flow</h2>
+      <h2>Install flow</h2>
       <ol>
-        <li>Connect the T-Watch Ultra and flash the Watch build.</li>
-        <li>Connect the XIAO ESP32-C5 and flash the C5 build.</li>
-        <li>Pair the Watch and C5 using device-specific enrollment.</li>
+        <li>Flash the Watch.</li>
+        <li>Flash the C5.</li>
+        <li>Power both devices near each other for first-time pairing.</li>
       </ol>
+      <p class="fine">Use a USB data cable. Disconnect the other ESP device while flashing so the correct serial port is easy to identify.</p>
+    </section>
+
+    <section class="warning-card">
+      <strong>Public-test build</strong>
+      <p>This is pre-release firmware. The Watch/C5 pairing flow is new and still needs a clean first-install hardware test before this site is announced as a stable release.</p>
     </section>
 
     <footer>
       <span>M33K X</span>
-      <span>Private staging flasher</span>
+      <span>Public-test web flasher</span>
     </footer>
   </main>
 </body>
