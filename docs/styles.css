@@ -55,6 +55,26 @@ h1 {
   font-size: 1.05rem;
 }
 
+.hero-art-wrap {
+  margin: 30px auto 0;
+  max-width: 820px;
+  padding: 10px;
+  border: 1px solid rgba(85,238,255,.28);
+  border-radius: 24px;
+  background: rgba(7,16,29,.58);
+  box-shadow:
+    0 18px 60px rgba(0,0,0,.34),
+    0 0 30px rgba(85,238,255,.08),
+    0 0 34px rgba(255,82,200,.06);
+}
+
+.hero-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
 .status-card,
 .steps,
 .device-card,
