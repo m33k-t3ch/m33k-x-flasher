@@ -10,27 +10,62 @@
   <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
   <script>
     (() => {
-      const removeDriverStep = () => {
+      const customizeNoPortDialog = () => {
         document.querySelectorAll("ewt-no-port-picked-dialog").forEach((dialog) => {
           const root = dialog.shadowRoot;
           if (!root) return;
+
           root.querySelectorAll("ol > li").forEach((item) => {
             if (item.textContent && item.textContent.includes("drivers for common chips")) {
               item.remove();
             }
           });
+
+          if (!root.querySelector("#m33k-dialog-style")) {
+            const style = document.createElement("style");
+            style.id = "m33k-dialog-style";
+            style.textContent = `
+              [slot="headline"],
+              [slot="content"] {
+                color: #b6ff00 !important;
+              }
+
+              [slot="content"] {
+                line-height: 1.55;
+              }
+            `;
+            root.appendChild(style);
+          }
+
+          const materialDialog = root.querySelector("ew-dialog");
+          const materialRoot = materialDialog && materialDialog.shadowRoot;
+          if (materialRoot && !materialRoot.querySelector("#m33k-material-dialog-style")) {
+            const style = document.createElement("style");
+            style.id = "m33k-material-dialog-style";
+            style.textContent = `
+              .container {
+                background: #02050b !important;
+                color: #b6ff00 !important;
+                border: 1px solid rgba(182,255,0,.42) !important;
+                box-shadow:
+                  0 22px 80px rgba(0,0,0,.72),
+                  0 0 34px rgba(182,255,0,.10) !important;
+              }
+            `;
+            materialRoot.appendChild(style);
+          }
         });
       };
 
       const observer = new MutationObserver(() => {
-        removeDriverStep();
-        setTimeout(removeDriverStep, 0);
-        setTimeout(removeDriverStep, 100);
+        customizeNoPortDialog();
+        setTimeout(customizeNoPortDialog, 0);
+        setTimeout(customizeNoPortDialog, 100);
       });
 
       window.addEventListener("DOMContentLoaded", () => {
         observer.observe(document.body, { childList: true, subtree: true });
-        removeDriverStep();
+        customizeNoPortDialog();
       });
     })();
   </script>
