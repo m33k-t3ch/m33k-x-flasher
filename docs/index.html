@@ -14,14 +14,14 @@
     <section class="hero">
       <p class="eyebrow">M33K X</p>
       <h1>Web Flasher</h1>
-      <p class="lead">Install the M33K X public-test firmware directly from a supported desktop browser.</p>
+      <p class="lead">Install M33K X firmware directly from a supported desktop browser.</p>
     </section>
 
     <section class="status-card">
       <div class="status-dot"></div>
       <div>
-        <strong>Public-test firmware loaded</strong>
-        <p>Watch and C5 browser-install packages are staged. Flash each device separately, then let them establish their own pairing.</p>
+        <strong>Firmware ready to install</strong>
+        <p>Flash the Watch and C5 separately, then power both devices near each other for first-time pairing.</p>
       </div>
     </section>
 
@@ -30,7 +30,7 @@
         <div class="chip">ESP32-S3</div>
         <h2>M33K X Watch</h2>
         <p class="device-name">LilyGO T-Watch Ultra</p>
-        <p class="device-note">Connect the Watch by USB, then start the installer below.</p>
+        <p class="device-note">Connect the Watch with a USB data cable, then start the installer.</p>
 
         <esp-web-install-button manifest="watch-manifest.json">
           <button class="install-button watch-button" slot="activate">Install Watch</button>
@@ -43,7 +43,7 @@
         <div class="chip">ESP32-C5</div>
         <h2>M33K X C5</h2>
         <p class="device-name">Seeed XIAO ESP32-C5 companion</p>
-        <p class="device-note">Connect the C5 by USB, then start the installer below.</p>
+        <p class="device-note">Connect the C5 with a USB data cable, then start the installer.</p>
 
         <esp-web-install-button manifest="c5-manifest.json">
           <button class="install-button c5-button" slot="activate">Install C5</button>
@@ -54,23 +54,23 @@
     </section>
 
     <section class="steps">
-      <h2>Install flow</h2>
+      <h2>Install</h2>
       <ol>
-        <li>Flash the Watch.</li>
-        <li>Flash the C5.</li>
+        <li>Connect and flash the Watch.</li>
+        <li>Connect and flash the C5.</li>
         <li>Power both devices near each other for first-time pairing.</li>
       </ol>
-      <p class="fine">Use a USB data cable. Disconnect the other ESP device while flashing so the correct serial port is easy to identify.</p>
+      <p class="fine">Flash one device at a time so the correct serial port is easy to identify.</p>
     </section>
 
     <section class="warning-card">
-      <strong>Public-test build</strong>
-      <p>This is pre-release firmware. The Watch/C5 pairing flow is new and still needs a clean first-install hardware test before this site is announced as a stable release.</p>
+      <strong>Beta firmware</strong>
+      <p>This release is still being tested on real hardware. Expect updates as testing continues.</p>
     </section>
 
     <footer>
       <span>M33K X</span>
-      <span>Public-test web flasher</span>
+      <span>Web Flasher</span>
     </footer>
   </main>
 </body>
