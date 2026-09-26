@@ -44,8 +44,29 @@ h1 {
   margin: 0;
   font-size: clamp(2.5rem, 8vw, 5.5rem);
   line-height: .95;
-  color: white;
-  text-shadow: 0 0 28px rgba(85,238,255,.24);
+  color: var(--cyan);
+  text-shadow:
+    0 0 8px rgba(85,238,255,.95),
+    0 0 20px rgba(85,238,255,.72),
+    0 0 42px rgba(85,238,255,.40);
+  animation: m33k-title-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes m33k-title-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 7px rgba(85,238,255,.78),
+      0 0 18px rgba(85,238,255,.55),
+      0 0 36px rgba(85,238,255,.28);
+    filter: brightness(.96);
+  }
+  50% {
+    text-shadow:
+      0 0 10px rgba(85,238,255,1),
+      0 0 28px rgba(85,238,255,.88),
+      0 0 58px rgba(85,238,255,.52);
+    filter: brightness(1.14);
+  }
 }
 
 .lead {
