@@ -8,6 +8,32 @@
   <meta name="description" content="Browser-based installer for M33K X Watch and XIAO ESP32-C5 firmware." />
   <link rel="stylesheet" href="styles.css" />
   <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <script>
+    (() => {
+      const removeDriverStep = () => {
+        document.querySelectorAll("ewt-no-port-picked-dialog").forEach((dialog) => {
+          const root = dialog.shadowRoot;
+          if (!root) return;
+          root.querySelectorAll("ol > li").forEach((item) => {
+            if (item.textContent && item.textContent.includes("drivers for common chips")) {
+              item.remove();
+            }
+          });
+        });
+      };
+
+      const observer = new MutationObserver(() => {
+        removeDriverStep();
+        setTimeout(removeDriverStep, 0);
+        setTimeout(removeDriverStep, 100);
+      });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        observer.observe(document.body, { childList: true, subtree: true });
+        removeDriverStep();
+      });
+    })();
+  </script>
 </head>
 <body>
   <main class="shell">
