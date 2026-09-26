@@ -31,6 +31,7 @@ body {
 }
 
 .hero { text-align: center; margin-bottom: 28px; }
+
 .eyebrow {
   margin: 0 0 8px;
   letter-spacing: .35em;
@@ -38,6 +39,7 @@ body {
   font-weight: 800;
   font-size: .78rem;
 }
+
 h1 {
   margin: 0;
   font-size: clamp(2.5rem, 8vw, 5.5rem);
@@ -45,6 +47,7 @@ h1 {
   color: white;
   text-shadow: 0 0 28px rgba(85,238,255,.24);
 }
+
 .lead {
   max-width: 680px;
   margin: 20px auto 0;
@@ -53,9 +56,9 @@ h1 {
 }
 
 .status-card,
-.install-card,
 .steps,
-.device-card {
+.device-card,
+.warning-card {
   border: 1px solid var(--border);
   background: var(--panel);
   border-radius: 22px;
@@ -69,14 +72,17 @@ h1 {
   padding: 18px 20px;
   margin-bottom: 18px;
 }
-.status-card p { margin: 4px 0 0; color: var(--muted); }
+
+.status-card p,
+.warning-card p { margin: 4px 0 0; color: var(--muted); }
+
 .status-dot {
   width: 12px;
   height: 12px;
   margin-top: 4px;
   border-radius: 50%;
-  background: var(--pink);
-  box-shadow: 0 0 18px rgba(255,82,200,.8);
+  background: var(--green);
+  box-shadow: 0 0 18px rgba(182,255,0,.8);
   flex: 0 0 auto;
 }
 
@@ -86,9 +92,17 @@ h1 {
   gap: 18px;
   margin-bottom: 18px;
 }
-.device-card { padding: 24px; background: var(--panel-soft); }
+
+.device-card {
+  padding: 24px;
+  background: var(--panel-soft);
+}
+
 .device-card h2 { margin: 14px 0 4px; font-size: 1.3rem; }
-.device-card p { margin: 0; color: var(--muted); }
+
+.device-name { margin: 0; color: var(--muted); }
+.device-note { min-height: 44px; color: #c3cfdb; line-height: 1.5; }
+
 .chip {
   display: inline-flex;
   border: 1px solid currentColor;
@@ -99,31 +113,70 @@ h1 {
   font-weight: 800;
   letter-spacing: .08em;
 }
+
 .device-card:nth-child(2) .chip { color: var(--purple); }
 
-.install-card {
-  text-align: center;
-  padding: 30px 24px;
+esp-web-install-button {
+  display: block;
+  margin-top: 20px;
+  --esp-tools-button-color: transparent;
+  --esp-tools-button-text-color: var(--green);
+  --esp-tools-button-border-radius: 16px;
+}
+
+.install-button {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 16px;
+  padding: 14px 20px;
+  font: inherit;
+  font-weight: 850;
+  letter-spacing: .03em;
+  cursor: pointer;
+  transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+}
+
+.install-button:hover {
+  transform: translateY(-1px);
+}
+
+.watch-button {
+  border: 1px solid rgba(85,238,255,.55);
+  background: rgba(85,238,255,.08);
+  color: var(--cyan);
+  box-shadow: 0 0 20px rgba(85,238,255,.08);
+}
+
+.c5-button {
+  border: 1px solid rgba(255,82,200,.55);
+  background: rgba(255,82,200,.08);
+  color: var(--pink);
+  box-shadow: 0 0 20px rgba(255,82,200,.08);
+}
+
+.unsupported {
+  display: block;
+  margin-top: 12px;
+  color: #ffb15c;
+  font-size: .85rem;
+  line-height: 1.4;
+}
+
+.steps {
+  padding: 24px;
   margin-bottom: 18px;
 }
-.install-card h2 { margin-top: 0; font-size: 1.8rem; }
-.install-card p { color: var(--muted); }
-.install-button {
-  margin: 14px 0 8px;
-  border: 1px solid rgba(182,255,0,.35);
-  border-radius: 16px;
-  padding: 14px 22px;
-  font: inherit;
-  font-weight: 800;
-  background: rgba(182,255,0,.08);
-  color: rgba(182,255,0,.58);
-  cursor: not-allowed;
-}
-.fine { font-size: .82rem; }
 
-.steps { padding: 24px; }
 .steps h2 { margin-top: 0; color: var(--pink); }
-.steps ol { margin-bottom: 0; color: var(--muted); line-height: 1.75; }
+.steps ol { color: var(--muted); line-height: 1.75; }
+.fine { margin-bottom: 0; color: #71869c; font-size: .82rem; line-height: 1.5; }
+
+.warning-card {
+  padding: 18px 20px;
+  border-color: rgba(255,177,92,.28);
+}
+
+.warning-card strong { color: #ffb15c; }
 
 footer {
   display: flex;
@@ -137,5 +190,6 @@ footer {
 @media (max-width: 640px) {
   .shell { padding-top: 34px; }
   .device-grid { grid-template-columns: 1fr; }
+  .device-note { min-height: 0; }
   footer { flex-direction: column; }
 }
