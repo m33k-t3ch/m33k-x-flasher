@@ -1,7 +1,7 @@
 # M33K X Web Flasher
 
 <p align="center">
-  <img src="docs/assets/m33k-x-art.png" alt="M33K X cyberpunk artwork" width="900">
+  <img src="docs/assets/pose8.png" alt="M33K X cyberpunk artwork" width="900">
 </p>
 
 M33K X is an experimental ESP32 wearable security and wireless research project built around the **LilyGO T-Watch Ultra** and a **Seeed XIAO ESP32-C5** companion.
