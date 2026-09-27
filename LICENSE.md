@@ -6,29 +6,29 @@
 
 </div>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 The M33K X source code is licensed under the <strong>GNU General Public License v3.0 (GPLv3)</strong>.
-</sub></p>
+</small></sub></p>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 M33K X is provided for personal use, education, research, development, and authorized security testing.
-</sub></p>
+</small></sub></p>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 You may use, study, modify, and redistribute the source code under the terms of GPLv3.
-</sub></p>
+</small></sub></p>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 If you share modified versions or derivative works based on the GPL-covered code, those versions should also remain available under GPLv3 with the corresponding source code.
-</sub></p>
+</small></sub></p>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 Third-party libraries, components, and dependencies included or referenced by this project remain subject to their own respective licenses.
-</sub></p>
+</small></sub></p>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 M33K X is provided as-is, without warranty. Users are responsible for ensuring that their use complies with applicable laws, regulations, and authorization requirements.
-</sub></p>
+</small></sub></p>
 
 <div align="left">
 
@@ -36,14 +36,14 @@ M33K X is provided as-is, without warranty. Users are responsible for ensuring t
 
 </div>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 M33K T3CH artwork, character designs, logos, graphics, icons, visual assets, and branding are <strong>All Rights Reserved</strong>.
-</sub></p>
+</small></sub></p>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 These visual assets are <strong>not licensed under GPLv3</strong> and are not included in the open-source license for the code.
-</sub></p>
+</small></sub></p>
 
-<p align="left"><small>
+<p align="left"><sub><small>
 Please contact the project before reusing, modifying, redistributing, rebranding, selling, or commercially using M33K T3CH artwork or branding.
-</sub></p>
+</small></sub></p>
