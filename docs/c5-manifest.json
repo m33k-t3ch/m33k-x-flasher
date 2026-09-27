@@ -1,6 +1,6 @@
 {
   "name": "M33K X C5",
-  "version": "0.1.2-public-test",
+  "version": "0.1.2-public-beta",
   "new_install_prompt_erase": false,
   "builds": [
     {
