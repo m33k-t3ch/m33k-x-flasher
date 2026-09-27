@@ -74,7 +74,7 @@ body {
 }
 
 .glitch-title::after {
-  color: rgba(255, 255, 255, 0.48);
+  color: rgba(85, 238, 255, 0.60);
   transform: translate(2px, 0);
   clip-path: inset(58% 0 0 0);
   animation: glitch-bottom 2.0s infinite steps(2, end);
