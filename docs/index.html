@@ -86,6 +86,7 @@
   </script>
 </head>
 <body>
+  <canvas id="matrix-rain" class="matrix-rain" aria-hidden="true"></canvas>
   <main class="shell">
     <section class="hero">
       <p class="eyebrow">M33K X</p>
@@ -157,5 +158,153 @@
       <span>Web Flasher</span>
     </footer>
   </main>
+
+  <script>
+    (() => {
+      const canvas = document.getElementById("matrix-rain");
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      const cyan = "85,238,255";
+      const pink = "255,82,200";
+      const chars = ["1", "Ø", "1", "0", "Ø", "1"];
+      let width = 0;
+      let height = 0;
+      let columns = [];
+      let animationFrame = 0;
+      let lastFrame = 0;
+
+      const resize = () => {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        const fontSize = width < 640 ? 15 : 17;
+        const count = Math.ceil(width / fontSize);
+        columns = Array.from({ length: count }, (_, i) => ({
+          x: i * fontSize,
+          y: Math.random() * height,
+          speed: 28 + Math.random() * 52,
+          fontSize,
+          pink: Math.random() < 0.18,
+          skullTimer: Math.random() * 9
+        }));
+
+        ctx.clearRect(0, 0, width, height);
+        if (reduceMotion.matches) drawStatic();
+      };
+
+      const drawBunnySkull = (x, y, size, alpha) => {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.strokeStyle = `rgba(${pink},${alpha})`;
+        ctx.fillStyle = `rgba(${pink},${alpha * 0.72})`;
+        ctx.lineWidth = Math.max(1.2, size * 0.07);
+        ctx.shadowColor = `rgba(${pink},.75)`;
+        ctx.shadowBlur = 10;
+
+        ctx.beginPath();
+        ctx.ellipse(-size * 0.18, -size * 0.55, size * 0.12, size * 0.30, -0.08, 0, Math.PI * 2);
+        ctx.ellipse(size * 0.18, -size * 0.55, size * 0.12, size * 0.30, 0.08, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(0, 0, size * 0.34, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.beginPath();
+        ctx.ellipse(-size * 0.12, -size * 0.03, size * 0.07, size * 0.09, -0.2, 0, Math.PI * 2);
+        ctx.ellipse(size * 0.12, -size * 0.03, size * 0.07, size * 0.09, 0.2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalCompositeOperation = "source-over";
+
+        ctx.fillStyle = `rgba(${pink},${alpha})`;
+        ctx.fillRect(-size * 0.13, size * 0.25, size * 0.26, size * 0.08);
+        ctx.restore();
+      };
+
+      const drawStatic = () => {
+        ctx.clearRect(0, 0, width, height);
+        ctx.font = "700 16px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+        ctx.textAlign = "center";
+        for (let i = 0; i < columns.length; i += 2) {
+          const col = columns[i];
+          const y = (i * 47) % Math.max(1, height);
+          ctx.fillStyle = `rgba(${i % 5 === 0 ? pink : cyan},.12)`;
+          ctx.fillText(chars[i % chars.length], col.x, y);
+        }
+      };
+
+      const frame = (time) => {
+        if (reduceMotion.matches) {
+          animationFrame = 0;
+          drawStatic();
+          return;
+        }
+
+        const dt = Math.min((time - lastFrame) / 1000 || 0, 0.05);
+        lastFrame = time;
+
+        ctx.fillStyle = "rgba(2,5,11,0.085)";
+        ctx.fillRect(0, 0, width, height);
+        ctx.textAlign = "center";
+
+        for (const col of columns) {
+          col.y += col.speed * dt;
+          col.skullTimer -= dt;
+
+          if (col.y > height + 30) {
+            col.y = -30 - Math.random() * 180;
+            col.speed = 28 + Math.random() * 52;
+            col.pink = Math.random() < 0.18;
+          }
+
+          const char = chars[(Math.random() * chars.length) | 0];
+          const isPink = col.pink && Math.random() < 0.35;
+
+          ctx.font = `700 ${col.fontSize}px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace`;
+          ctx.fillStyle = `rgba(${isPink ? pink : cyan},${isPink ? 0.34 : 0.23})`;
+          ctx.shadowColor = `rgba(${isPink ? pink : cyan},.45)`;
+          ctx.shadowBlur = 6;
+          ctx.fillText(char, col.x, col.y);
+
+          if (col.skullTimer <= 0 && Math.random() < 0.035) {
+            drawBunnySkull(col.x, col.y - 24, col.fontSize * 1.35, 0.32);
+            col.skullTimer = 5 + Math.random() * 10;
+          }
+        }
+
+        ctx.shadowBlur = 0;
+        animationFrame = requestAnimationFrame(frame);
+      };
+
+      const syncMotion = () => {
+        if (animationFrame) cancelAnimationFrame(animationFrame);
+        animationFrame = 0;
+        lastFrame = performance.now();
+        if (reduceMotion.matches) {
+          drawStatic();
+        } else {
+          animationFrame = requestAnimationFrame(frame);
+        }
+      };
+
+      window.addEventListener("resize", resize, { passive: true });
+      reduceMotion.addEventListener?.("change", syncMotion);
+
+      resize();
+      syncMotion();
+    })();
+  </script>
+
 </body>
 </html>
