@@ -194,8 +194,9 @@
           speed: 10 + Math.random() * 16,
           fontSize,
           pink: Math.random() < 0.48,
-          skullTimer: 6 + Math.random() * 12,
-          skullDuration: 0
+          skullTimer: 2 + Math.random() * 28,
+          skullDuration: 0,
+          skullTotalDuration: 0
         }));
 
         ctx.clearRect(0, 0, width, height);
@@ -342,15 +343,17 @@
           }
 
           if (col.skullDuration > 0) {
-            const fadeIn = Math.min(1, (5.2 - col.skullDuration) / 0.55);
+            const totalDuration = col.skullTotalDuration || 4.5;
+            const fadeIn = Math.min(1, (totalDuration - col.skullDuration) / 0.55);
             const fadeOut = Math.min(1, col.skullDuration / 0.85);
             const skullAlpha = 0.72 * Math.min(fadeIn, fadeOut);
             drawBunnySkull(col.x, col.y - 28, col.fontSize * 1.45, skullAlpha);
           }
 
           if (col.skullTimer <= 0 && col.skullDuration <= 0) {
-            col.skullDuration = 5.2;
-            col.skullTimer = 16 + Math.random() * 14;
+            col.skullTotalDuration = 3.4 + Math.random() * 3.2;
+            col.skullDuration = col.skullTotalDuration;
+            col.skullTimer = 8 + Math.random() * 34;
           }
         }
 
