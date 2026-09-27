@@ -94,8 +94,17 @@
           const root = dialog.shadowRoot;
           if (!root) return;
 
+          // Remove ESP Web Tools' driver-install help row/links from the
+          // "No port selected" dialog. Match broadly so wording changes
+          // don't make the links reappear.
           root.querySelectorAll("ol > li").forEach((item) => {
-            if (item.textContent && item.textContent.includes("drivers for common chips")) {
+            const text = (item.textContent || "").toLowerCase();
+            if (
+              text.includes("drivers for common chips") ||
+              text.includes("install drivers") ||
+              text.includes("driver") ||
+              item.querySelector('a[href*="driver"]')
+            ) {
               item.remove();
             }
           });
