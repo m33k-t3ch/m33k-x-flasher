@@ -67,14 +67,14 @@ body {
 }
 
 .glitch-title::before {
-  color: rgba(85, 238, 255, 0.60);
+  color: rgba(0, 255, 255, 0.92);
   transform: translate(-2px, 0);
   clip-path: inset(0 0 52% 0);
   animation: glitch-top 2.4s infinite steps(2, end);
 }
 
 .glitch-title::after {
-  color: rgba(85, 238, 255, 0.60);
+  color: rgba(0, 255, 255, 0.92);
   transform: translate(2px, 0);
   clip-path: inset(58% 0 0 0);
   animation: glitch-bottom 2.0s infinite steps(2, end);
@@ -84,11 +84,11 @@ h1 {
   margin: 10px 0 0;
   font-size: clamp(1.75rem, 5vw, 3.35rem);
   line-height: 1;
-  color: var(--cyan);
+  color: var(--green);
   text-shadow:
-    0 0 7px rgba(85,238,255,.9),
-    0 0 18px rgba(85,238,255,.62),
-    0 0 34px rgba(85,238,255,.32);
+    0 0 7px rgba(182,255,0,.92),
+    0 0 18px rgba(182,255,0,.68),
+    0 0 34px rgba(182,255,0,.34);
   animation: m33k-title-pulse 2.4s ease-in-out infinite;
 }
 
@@ -129,16 +129,16 @@ h1 {
 @keyframes m33k-title-pulse {
   0%, 100% {
     text-shadow:
-      0 0 6px rgba(85,238,255,.72),
-      0 0 15px rgba(85,238,255,.48),
-      0 0 28px rgba(85,238,255,.24);
-    filter: brightness(.96);
+      0 0 6px rgba(182,255,0,.76),
+      0 0 15px rgba(182,255,0,.50),
+      0 0 28px rgba(182,255,0,.26);
+    filter: brightness(.98);
   }
   50% {
     text-shadow:
-      0 0 8px rgba(85,238,255,.98),
-      0 0 22px rgba(85,238,255,.78),
-      0 0 42px rgba(85,238,255,.42);
+      0 0 8px rgba(182,255,0,1),
+      0 0 22px rgba(182,255,0,.84),
+      0 0 42px rgba(182,255,0,.46);
     filter: brightness(1.1);
   }
 }
