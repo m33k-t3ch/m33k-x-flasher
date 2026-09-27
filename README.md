@@ -72,7 +72,7 @@ Current firmware is a beta release and is being tested on real hardware before a
 
 ## License
 
-The M33K X source code is licensed under the **GNU General Public License v3.0 (GPLv3)**.
+The M33K X firmware source code is licensed under the **GNU General Public License v3.0 (GPLv3)**. The corresponding public source snapshot will be published alongside the public firmware release.
 
 M33K T3CH artwork, character designs, logos, graphics, icons, visual assets, and branding are **All Rights Reserved** and are not included in the GPLv3 license for the source code.
 
@@ -81,7 +81,6 @@ See [LICENSE.md](LICENSE.md) for the project licensing terms and [THIRD_PARTY_NO
 ## Links
 
 - Web Flasher: https://m33k-t3ch.github.io/m33k-x-flasher/
-- Source code: https://github.com/m33k-t3ch/m33k-x-dev
 - Flasher repository: https://github.com/m33k-t3ch/m33k-x-flasher
 
 ## GitHub Pages
