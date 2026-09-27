@@ -35,15 +35,15 @@ body {
 
 .eyebrow {
   margin: 0 0 8px;
-  letter-spacing: .18em;
+  letter-spacing: .08em;
   color: var(--pink);
+  font-family: "Arial Black", "Segoe UI Black", Impact, ui-sans-serif, sans-serif;
   font-weight: 900;
   font-size: clamp(2.8rem, 8vw, 5.9rem);
   line-height: .9;
   text-shadow:
-    0 0 8px rgba(255,82,200,.95),
-    0 0 22px rgba(255,82,200,.72),
-    0 0 48px rgba(255,82,200,.42);
+    0 0 2px rgba(255,255,255,.92),
+    0 0 8px rgba(255,255,255,.34);
   animation: m33k-brand-pulse 2.4s ease-in-out infinite;
 }
 
@@ -62,17 +62,16 @@ h1 {
 @keyframes m33k-brand-pulse {
   0%, 100% {
     text-shadow:
-      0 0 7px rgba(255,82,200,.82),
-      0 0 18px rgba(255,82,200,.58),
-      0 0 38px rgba(255,82,200,.30);
-    filter: brightness(.98);
+      0 0 1px rgba(255,255,255,.82),
+      0 0 5px rgba(255,255,255,.24);
+    filter: brightness(1);
   }
   50% {
     text-shadow:
-      0 0 11px rgba(255,82,200,1),
-      0 0 30px rgba(255,82,200,.90),
-      0 0 62px rgba(255,82,200,.54);
-    filter: brightness(1.15);
+      0 0 2px rgba(255,255,255,1),
+      0 0 8px rgba(255,255,255,.86),
+      0 0 16px rgba(255,255,255,.36);
+    filter: brightness(1.03);
   }
 }
 
