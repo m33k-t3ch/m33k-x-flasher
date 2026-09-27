@@ -1,5 +1,7 @@
 # M33K X Web Flasher
 
+![M33K X cyberpunk artwork](docs/assets/m33k-x-main.webp)
+
 Browser-based installer for M33K X firmware.
 
 ## Supported devices
