@@ -51,7 +51,7 @@ The M33K X source code is licensed under the **GNU General Public License v3.0 (
 
 M33K T3CH artwork, character designs, logos, graphics, icons, visual assets, and branding are **All Rights Reserved** and are not included in the GPLv3 license for the source code.
 
-See [LICENSE.md](LICENSE.md) for the project licensing terms.
+See [LICENSE.md](LICENSE.md) for the project licensing terms and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for dependency notices.
 
 ## GitHub Pages
 
