@@ -28,6 +28,27 @@ This repository hosts the browser-based Web Flasher for installing M33K X firmwa
 - **LoRa / Radio** — In progress
 - **Phone / dashboard integration** — Planned
 
+
+## Tools and features
+
+The current M33K X Watch firmware includes:
+
+- **Wi-Fi Scanner** — nearby 2.4 GHz networks from the Watch plus C5-assisted 5 GHz results, network details, and a live channel graph.
+- **BLE Scanner** — nearby BLE advertisements with signal and device details.
+- **Recon Dashboard** — combined Wi-Fi, BLE, channel, and GPS summaries.
+  - **Pulse** — visualizes newly observed, lost, and changing signals.
+  - **Radar** — radar-style visualization of wireless observations.
+  - **Signal Hunter** — target-oriented Wi-Fi/BLE signal-strength tracking.
+  - **Watch Mode** — creates a local wireless baseline and watches for changes between sweeps.
+- **Wardrive** — repeated Wi-Fi/BLE collection with GPS data and C5-assisted 5 GHz observations; sessions can be stored locally on microSD.
+- **GPS / GNSS** — satellites, coordinates, altitude, speed, HDOP, course, and receiver status.
+- **SD Logs** — view locally stored wardrive files on the watch.
+- **Settings** — timezone, 12/24-hour clock, Wi-Fi connection/persistence, and device configuration.
+- **Radio / LoRa** — experimental receive/listen and packet-monitoring controls; still in active development.
+- **NFC** — interface is present, but the feature remains in progress and is not considered reliable in the public beta.
+- **Phone / Web Dashboard** — planned / in progress and not enabled in the current public beta.
+
+
 ## Supported devices
 
 - **M33K X Watch** — LilyGO T-Watch Ultra (ESP32-S3)
