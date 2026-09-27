@@ -63,6 +63,3 @@ This program is free software: you may redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 </small></sub></p>
 
-<p align="left"><sub><small>
-The full GNU GPLv3 license text is included with this repository in the <code>COPYING</code> file.
-</small></sub></p>
