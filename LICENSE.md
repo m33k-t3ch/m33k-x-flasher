@@ -1,4 +1,4 @@
-<div align="right">
+<div align="left">
 
 ## M33K X License
 
@@ -30,7 +30,7 @@ Third-party libraries, components, and dependencies included or referenced by th
 M33K X is provided as-is, without warranty. Users are responsible for ensuring that their use complies with applicable laws, regulations, and authorization requirements.
 </sub></p>
 
-<div align="right">
+<div align="left">
 
 ### M33K T3CH Artwork & Branding
 
