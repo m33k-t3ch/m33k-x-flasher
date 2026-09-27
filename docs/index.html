@@ -193,7 +193,7 @@
           y: Math.random() * height,
           speed: 10 + Math.random() * 16,
           fontSize,
-          pink: Math.random() < 0.18,
+          pink: Math.random() < 0.48,
           skullTimer: Math.random() * 9
         }));
 
@@ -208,7 +208,7 @@
         ctx.fillStyle = `rgba(${pink},${alpha * 0.72})`;
         ctx.lineWidth = Math.max(1.2, size * 0.07);
         ctx.shadowColor = `rgba(${pink},.75)`;
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 18;
 
         ctx.beginPath();
         ctx.ellipse(-size * 0.18, -size * 0.55, size * 0.12, size * 0.30, -0.08, 0, Math.PI * 2);
@@ -264,15 +264,15 @@
           if (col.y > height + 30) {
             col.y = -30 - Math.random() * 180;
             col.speed = 10 + Math.random() * 16;
-            col.pink = Math.random() < 0.18;
+            col.pink = Math.random() < 0.48;
           }
 
           const char = chars[(Math.random() * chars.length) | 0];
-          const isPink = col.pink && Math.random() < 0.35;
+          const isPink = col.pink ? Math.random() < 0.78 : Math.random() < 0.24;
 
           ctx.font = `800 ${col.fontSize}px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace`;
-          ctx.fillStyle = `rgba(${isPink ? pink : cyan},${isPink ? 0.70 : 0.58})`;
-          ctx.shadowColor = `rgba(${isPink ? pink : cyan},.55)`;
+          ctx.fillStyle = `rgba(${isPink ? pink : cyan},${isPink ? 0.82 : 0.48})`;
+          ctx.shadowColor = `rgba(${isPink ? pink : cyan},${isPink ? .72 : .38})`;
           ctx.shadowBlur = 1;
           ctx.fillText(char, col.x, col.y);
 
@@ -284,9 +284,9 @@
             ctx.fillText(trailChar, col.x, trailY);
           }
 
-          if (col.skullTimer <= 0 && Math.random() < 0.035) {
-            drawBunnySkull(col.x, col.y - 24, col.fontSize * 1.35, 0.32);
-            col.skullTimer = 5 + Math.random() * 10;
+          if (col.skullTimer <= 0 && Math.random() < 0.14) {
+            drawBunnySkull(col.x, col.y - 28, col.fontSize * 1.75, 0.78);
+            col.skullTimer = 2.5 + Math.random() * 5;
           }
         }
 
