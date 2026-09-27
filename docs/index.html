@@ -194,7 +194,9 @@
           speed: 10 + Math.random() * 16,
           fontSize,
           pink: Math.random() < 0.48,
-          skullTimer: Math.random() * 9
+          skullTimer: 6 + Math.random() * 12,
+          skullDuration: 0,
+          skullY: 0
         }));
 
         ctx.clearRect(0, 0, width, height);
@@ -260,6 +262,7 @@
         for (const col of columns) {
           col.y += col.speed * dt;
           col.skullTimer -= dt;
+          if (col.skullDuration > 0) col.skullDuration -= dt;
 
           if (col.y > height + 30) {
             col.y = -30 - Math.random() * 180;
@@ -284,9 +287,17 @@
             ctx.fillText(trailChar, col.x, trailY);
           }
 
-          if (col.skullTimer <= 0 && Math.random() < 0.035) {
-            drawBunnySkull(col.x, col.y - 28, col.fontSize * 1.75, 0.78);
-            col.skullTimer = 7 + Math.random() * 10;
+          if (col.skullDuration > 0) {
+            const fadeIn = Math.min(1, (3.8 - col.skullDuration) / 0.45);
+            const fadeOut = Math.min(1, col.skullDuration / 0.7);
+            const skullAlpha = 0.72 * Math.min(fadeIn, fadeOut);
+            drawBunnySkull(col.x, col.skullY, col.fontSize * 1.75, skullAlpha);
+          }
+
+          if (col.skullTimer <= 0 && col.skullDuration <= 0) {
+            col.skullDuration = 3.8;
+            col.skullY = Math.max(48, Math.min(height - 48, col.y - 28));
+            col.skullTimer = 14 + Math.random() * 12;
           }
         }
 
