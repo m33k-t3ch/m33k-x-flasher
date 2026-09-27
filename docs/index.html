@@ -206,31 +206,86 @@
       const drawBunnySkull = (x, y, size, alpha) => {
         ctx.save();
         ctx.translate(x, y);
+
         ctx.strokeStyle = `rgba(${pink},${alpha})`;
-        ctx.fillStyle = `rgba(${pink},${alpha * 0.72})`;
-        ctx.lineWidth = Math.max(1.2, size * 0.07);
-        ctx.shadowColor = `rgba(${pink},.75)`;
-        ctx.shadowBlur = 12;
+        ctx.fillStyle = `rgba(${pink},${alpha * 0.08})`;
+        ctx.lineWidth = Math.max(1.4, size * 0.06);
+        ctx.shadowColor = `rgba(${pink},.72)`;
+        ctx.shadowBlur = 10;
 
+        // Long, narrow rabbit ears
         ctx.beginPath();
-        ctx.ellipse(-size * 0.18, -size * 0.55, size * 0.12, size * 0.30, -0.08, 0, Math.PI * 2);
-        ctx.ellipse(size * 0.18, -size * 0.55, size * 0.12, size * 0.30, 0.08, 0, Math.PI * 2);
+        ctx.moveTo(-size * 0.18, -size * 0.18);
+        ctx.lineTo(-size * 0.29, -size * 0.96);
+        ctx.lineTo(-size * 0.15, -size * 1.02);
+        ctx.lineTo(-size * 0.05, -size * 0.24);
+
+        ctx.moveTo(size * 0.18, -size * 0.18);
+        ctx.lineTo(size * 0.29, -size * 0.96);
+        ctx.lineTo(size * 0.15, -size * 1.02);
+        ctx.lineTo(size * 0.05, -size * 0.24);
         ctx.stroke();
 
+        // Angular skull / mask silhouette
         ctx.beginPath();
-        ctx.arc(0, 0, size * 0.34, 0, Math.PI * 2);
+        ctx.moveTo(-size * 0.34, -size * 0.08);
+        ctx.lineTo(-size * 0.30, size * 0.14);
+        ctx.lineTo(-size * 0.18, size * 0.30);
+        ctx.lineTo(-size * 0.08, size * 0.42);
+        ctx.lineTo(0, size * 0.49);
+        ctx.lineTo(size * 0.08, size * 0.42);
+        ctx.lineTo(size * 0.18, size * 0.30);
+        ctx.lineTo(size * 0.30, size * 0.14);
+        ctx.lineTo(size * 0.34, -size * 0.08);
+        ctx.lineTo(size * 0.20, -size * 0.30);
+        ctx.lineTo(0, -size * 0.39);
+        ctx.lineTo(-size * 0.20, -size * 0.30);
+        ctx.closePath();
         ctx.fill();
         ctx.stroke();
 
+        // Sharp eye sockets
+        ctx.save();
         ctx.globalCompositeOperation = "destination-out";
-        ctx.beginPath();
-        ctx.ellipse(-size * 0.12, -size * 0.03, size * 0.07, size * 0.09, -0.2, 0, Math.PI * 2);
-        ctx.ellipse(size * 0.12, -size * 0.03, size * 0.07, size * 0.09, 0.2, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.globalCompositeOperation = "source-over";
 
-        ctx.fillStyle = `rgba(${pink},${alpha})`;
-        ctx.fillRect(-size * 0.13, size * 0.25, size * 0.26, size * 0.08);
+        ctx.beginPath();
+        ctx.moveTo(-size * 0.20, -size * 0.03);
+        ctx.lineTo(-size * 0.07, -size * 0.12);
+        ctx.lineTo(-size * 0.04, size * 0.06);
+        ctx.lineTo(-size * 0.17, size * 0.10);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(size * 0.20, -size * 0.03);
+        ctx.lineTo(size * 0.07, -size * 0.12);
+        ctx.lineTo(size * 0.04, size * 0.06);
+        ctx.lineTo(size * 0.17, size * 0.10);
+        ctx.closePath();
+        ctx.fill();
+
+        // Nose cavity
+        ctx.beginPath();
+        ctx.moveTo(0, size * 0.08);
+        ctx.lineTo(-size * 0.055, size * 0.18);
+        ctx.lineTo(size * 0.055, size * 0.18);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.restore();
+
+        // Jaw / tooth details
+        ctx.beginPath();
+        ctx.moveTo(-size * 0.11, size * 0.29);
+        ctx.lineTo(size * 0.11, size * 0.29);
+        ctx.moveTo(-size * 0.055, size * 0.29);
+        ctx.lineTo(-size * 0.055, size * 0.40);
+        ctx.moveTo(0, size * 0.29);
+        ctx.lineTo(0, size * 0.43);
+        ctx.moveTo(size * 0.055, size * 0.29);
+        ctx.lineTo(size * 0.055, size * 0.40);
+        ctx.stroke();
+
         ctx.restore();
       };
 
@@ -291,7 +346,7 @@
             const fadeIn = Math.min(1, (3.8 - col.skullDuration) / 0.45);
             const fadeOut = Math.min(1, col.skullDuration / 0.7);
             const skullAlpha = 0.72 * Math.min(fadeIn, fadeOut);
-            drawBunnySkull(col.x, col.skullY, col.fontSize * 1.75, skullAlpha);
+            drawBunnySkull(col.x, col.skullY, col.fontSize * 1.45, skullAlpha);
           }
 
           if (col.skullTimer <= 0 && col.skullDuration <= 0) {
