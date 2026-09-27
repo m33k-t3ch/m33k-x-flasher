@@ -43,6 +43,8 @@ The installer uses ESP Web Tools so firmware can be flashed directly from a supp
 4. Complete the browser flashing process.
 5. After both devices are flashed, power them near each other for first-time pairing.
 
+For updates, choose **not to erase** when prompted if you want to preserve saved Wi-Fi settings and the Watch↔C5 enrollment key.
+
 ## Firmware status
 
 Current firmware is a beta release and is being tested on real hardware before a stable release is announced.
@@ -54,6 +56,12 @@ The M33K X source code is licensed under the **GNU General Public License v3.0 (
 M33K T3CH artwork, character designs, logos, graphics, icons, visual assets, and branding are **All Rights Reserved** and are not included in the GPLv3 license for the source code.
 
 See [LICENSE.md](LICENSE.md) for the project licensing terms and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for dependency notices.
+
+## Links
+
+- Web Flasher: https://m33k-t3ch.github.io/m33k-x-flasher/
+- Source code: https://github.com/m33k-t3ch/m33k-x-dev
+- Flasher repository: https://github.com/m33k-t3ch/m33k-x-flasher
 
 ## GitHub Pages
 
