@@ -17,13 +17,15 @@ This repository hosts the browser-based Web Flasher for installing M33K X firmwa
 - ESP32-S3 Watch + ESP32-C5 companion workflow
 - Beta firmware testing on real hardware
 - Custom M33K X interface and artwork
-- Ongoing Wi-Fi, BLE, GPS, wardriving, and device-integration development
+- Ongoing Wi-Fi, BLE, GPS, wardriving, NFC, LoRa/radio, and device-integration development
 
 ## Project status
 
 - **M33K X Watch** — Beta
 - **M33K X C5 companion** — Beta
 - **Web Flasher** — Working
+- **NFC** — In progress
+- **LoRa / Radio** — In progress
 - **Phone / dashboard integration** — Planned
 
 ## Supported devices
