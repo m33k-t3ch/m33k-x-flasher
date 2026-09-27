@@ -6,7 +6,18 @@
 
 M33K X is an experimental ESP32 wearable security and wireless research project built around the **LilyGO T-Watch Ultra** and a **Seeed XIAO ESP32-C5** companion.
 
+> **Experimental learning project:** M33K X is being built as a hands-on way to explore ESP32 development, wireless technologies, embedded systems, security research, and custom hardware/software integration. Features may change as testing and development continue.
+
 This repository hosts the browser-based Web Flasher for installing M33K X firmware.
+
+## Features
+
+- Browser-based firmware installation with ESP Web Tools
+- Separate installers for the M33K X Watch and XIAO ESP32-C5 companion
+- ESP32-S3 Watch + ESP32-C5 companion workflow
+- Beta firmware testing on real hardware
+- Custom M33K X interface and artwork
+- Ongoing Wi-Fi, BLE, GPS, wardriving, and device-integration development
 
 ## Project status
 
