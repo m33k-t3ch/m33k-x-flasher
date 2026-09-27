@@ -35,16 +35,24 @@ body {
 
 .eyebrow {
   margin: 0 0 8px;
-  letter-spacing: .08em;
   color: var(--pink);
-  font-family: "Arial Black", "Segoe UI Black", Impact, ui-sans-serif, sans-serif;
-  font-weight: 900;
-  font-size: clamp(2.8rem, 8vw, 5.9rem);
+  font-family: "Rubik Spray Paint", Impact, "Arial Black", sans-serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 6rem);
   line-height: .9;
+  letter-spacing: .025em;
+  text-transform: uppercase;
   text-shadow:
-    0 0 2px rgba(255,255,255,.92),
-    0 0 8px rgba(255,255,255,.34);
+    0 0 1px rgba(255,255,255,.96),
+    0 0 4px rgba(255,255,255,.28);
   animation: m33k-brand-pulse 2.4s ease-in-out infinite;
+}
+
+.spray-title {
+  display: inline-block;
+  transform: rotate(-1.2deg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
 }
 
 h1 {
@@ -62,16 +70,16 @@ h1 {
 @keyframes m33k-brand-pulse {
   0%, 100% {
     text-shadow:
-      0 0 1px rgba(255,255,255,.82),
-      0 0 5px rgba(255,255,255,.24);
+      0 0 1px rgba(255,255,255,.72),
+      0 0 3px rgba(255,255,255,.16);
     filter: brightness(1);
   }
   50% {
     text-shadow:
       0 0 2px rgba(255,255,255,1),
-      0 0 8px rgba(255,255,255,.86),
-      0 0 16px rgba(255,255,255,.36);
-    filter: brightness(1.03);
+      0 0 6px rgba(255,255,255,.72),
+      0 0 10px rgba(255,255,255,.20);
+    filter: brightness(1.02);
   }
 }
 
