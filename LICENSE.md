@@ -47,3 +47,22 @@ These visual assets are <strong>not licensed under GPLv3</strong> and are not in
 <p align="left"><sub><small>
 Please contact the project before reusing, modifying, redistributing, rebranding, selling, or commercially using M33K T3CH artwork or branding.
 </small></sub></p>
+
+
+<div align="left">
+
+#### GPLv3 Notice
+
+</div>
+
+<p align="left"><sub><small>
+This program is free software: you may redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License.
+</small></sub></p>
+
+<p align="left"><sub><small>
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</small></sub></p>
+
+<p align="left"><sub><small>
+The full GNU GPLv3 license text is included with this repository in the <code>COPYING</code> file.
+</small></sub></p>
