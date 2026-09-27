@@ -1,5 +1,9 @@
 # M33K X Web Flasher
 
+<p align="center">
+  <img src="docs/assets/flasher1.png" alt="M33K X cyberpunk artwork" width="900">
+</p>
+
 
 Browser-based installer for M33K X firmware.
 
