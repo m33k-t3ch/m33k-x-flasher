@@ -1,7 +1,7 @@
 {
   "name": "M33K X Watch",
   "version": "0.6.0g-public-beta",
-  "new_install_prompt_erase": false,
+  "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32-S3",
