@@ -6,7 +6,7 @@
 
 </div>
 
-<div align="center">
+<div align="right">
 
 The M33K X source code is licensed under the **GNU General Public License v3.0 (GPLv3)**.
 
@@ -28,7 +28,7 @@ M33K X is provided as-is, without warranty. Users are responsible for ensuring t
 
 </div>
 
-<div align="center">
+<div align="right">
 
 M33K T3CH artwork, character designs, logos, graphics, icons, visual assets, and branding are **All Rights Reserved**.
 
