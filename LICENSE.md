@@ -67,7 +67,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #### Full GNU GPLv3 License Text
 
-```text
 GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -689,4 +688,3 @@ Program, unless a warranty or assumption of liability accompanies a
 copy of the Program in return for a fee.
 
                      END OF TERMS AND CONDITIONS
-```
