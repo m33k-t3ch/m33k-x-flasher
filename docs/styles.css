@@ -84,11 +84,11 @@ h1 {
   margin: 10px 0 0;
   font-size: clamp(1.75rem, 5vw, 3.35rem);
   line-height: 1;
-  color: var(--green);
+  color: #39ff14;
   text-shadow:
-    0 0 7px rgba(182,255,0,.92),
-    0 0 18px rgba(182,255,0,.68),
-    0 0 34px rgba(182,255,0,.34);
+    0 0 7px rgba(57,255,20,.96),
+    0 0 18px rgba(57,255,20,.72),
+    0 0 34px rgba(57,255,20,.38);
   animation: m33k-title-pulse 2.4s ease-in-out infinite;
 }
 
@@ -129,16 +129,16 @@ h1 {
 @keyframes m33k-title-pulse {
   0%, 100% {
     text-shadow:
-      0 0 6px rgba(182,255,0,.76),
-      0 0 15px rgba(182,255,0,.50),
-      0 0 28px rgba(182,255,0,.26);
+      0 0 6px rgba(57,255,20,.80),
+      0 0 15px rgba(57,255,20,.54),
+      0 0 28px rgba(57,255,20,.28);
     filter: brightness(.98);
   }
   50% {
     text-shadow:
-      0 0 8px rgba(182,255,0,1),
-      0 0 22px rgba(182,255,0,.84),
-      0 0 42px rgba(182,255,0,.46);
+      0 0 8px rgba(57,255,20,1),
+      0 0 22px rgba(57,255,20,.88),
+      0 0 42px rgba(57,255,20,.50);
     filter: brightness(1.1);
   }
 }
