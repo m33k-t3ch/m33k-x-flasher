@@ -13,6 +13,58 @@
 
 * { box-sizing: border-box; }
 
+/* ESP Web Tools dialogs inherit Material theme variables from the page.
+   These apply to the installer, erase prompt, confirmation, errors, progress,
+   and the custom no-port dialog that ESP Web Tools appends to <body>. */
+html,
+body,
+ewt-install-dialog,
+ewt-no-port-picked-dialog {
+  color-scheme: dark;
+  --md-dialog-container-color: #02050b;
+  --md-dialog-headline-color: #b6ff00;
+  --md-dialog-supporting-text-color: #b6ff00;
+
+  --md-sys-color-surface: #02050b;
+  --md-sys-color-surface-container: #02050b;
+  --md-sys-color-surface-container-low: #02050b;
+  --md-sys-color-surface-container-high: #02050b;
+  --md-sys-color-surface-container-highest: #02050b;
+
+  --md-sys-color-on-surface: #b6ff00;
+  --md-sys-color-on-surface-variant: #b6ff00;
+  --md-sys-color-primary: #55eeff;
+  --md-sys-color-on-primary: #02050b;
+  --md-sys-color-outline: #55eeff;
+
+  --md-text-button-label-text-color: #55eeff;
+  --md-text-button-hover-label-text-color: #55eeff;
+  --md-text-button-focus-label-text-color: #55eeff;
+  --md-text-button-pressed-label-text-color: #55eeff;
+
+  --md-list-container-color: #02050b;
+  --md-list-item-label-text-color: #b6ff00;
+  --md-list-item-supporting-text-color: #b6ff00;
+  --md-list-item-leading-icon-color: #55eeff;
+  --md-list-item-trailing-icon-color: #55eeff;
+
+  --md-checkbox-selected-container-color: #55eeff;
+  --md-checkbox-selected-hover-container-color: #55eeff;
+  --md-checkbox-selected-focus-container-color: #55eeff;
+  --md-checkbox-selected-pressed-container-color: #55eeff;
+  --md-checkbox-selected-icon-color: #02050b;
+  --md-checkbox-unselected-outline-color: #55eeff;
+
+  --md-linear-progress-active-indicator-color: #55eeff;
+  --md-linear-progress-track-color: rgba(85,238,255,.18);
+}
+
+ewt-install-dialog,
+ewt-no-port-picked-dialog {
+  color: #b6ff00;
+}
+
+
 body {
   margin: 0;
   min-height: 100vh;
