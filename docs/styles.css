@@ -36,30 +36,34 @@ body {
 .eyebrow {
   margin: 0 0 8px;
   color: var(--pink);
-  font-family: "Consolas", "Segoe UI", "Arial Narrow", sans-serif;
-  font-weight: 800;
-  font-size: clamp(2.9rem, 8vw, 5.8rem);
-  line-height: .9;
-  letter-spacing: .12em;
+  font-family: "Arial Narrow", "Bahnschrift SemiCondensed", "Segoe UI Semibold", sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 5.9rem);
+  line-height: .88;
+  letter-spacing: .08em;
   text-transform: uppercase;
   text-shadow:
-    0 0 1px rgba(255,255,255,.95),
-    0 0 4px rgba(255,255,255,.22);
-  animation: m33k-brand-pulse 2.4s ease-in-out infinite;
+    0 0 1px rgba(255,255,255,.98),
+    0 0 3px rgba(255,255,255,.18);
+  animation: m33k-brand-pulse 2.2s steps(2, end) infinite;
 }
 
-.cyber-title {
+.hacker-title {
   display: inline-block;
-  transform: skewX(-8deg) scaleX(.92);
+  transform: skewX(-12deg) scaleX(.88);
+  clip-path: polygon(
+    0 8%, 7% 8%, 7% 0, 93% 0, 93% 8%, 100% 8%,
+    100% 42%, 96% 42%, 96% 58%, 100% 58%,
+    100% 92%, 93% 92%, 93% 100%, 7% 100%, 7% 92%, 0 92%,
+    0 58%, 4% 58%, 4% 42%, 0 42%
+  );
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
 }
 
-.cyber-title::before,
-.cyber-title::after {
+.hacker-title::after {
   content: "";
-  display: inline-block;
-  width: 0;
+  position: absolute;
 }
 
 h1 {
@@ -75,18 +79,28 @@ h1 {
 }
 
 @keyframes m33k-brand-pulse {
-  0%, 100% {
+  0%, 72%, 100% {
     text-shadow:
-      0 0 1px rgba(255,255,255,.78),
-      0 0 3px rgba(255,255,255,.14);
+      0 0 1px rgba(255,255,255,.82),
+      0 0 3px rgba(255,255,255,.10);
     filter: brightness(1);
   }
-  50% {
+  76% {
     text-shadow:
       0 0 2px rgba(255,255,255,1),
-      0 0 5px rgba(255,255,255,.58),
-      0 0 8px rgba(255,255,255,.16);
-    filter: brightness(1.015);
+      0 0 5px rgba(255,255,255,.72);
+    filter: brightness(1.04);
+  }
+  80% {
+    text-shadow:
+      0 0 1px rgba(255,255,255,.72);
+    filter: brightness(.98);
+  }
+  84% {
+    text-shadow:
+      0 0 2px rgba(255,255,255,1),
+      0 0 4px rgba(255,255,255,.52);
+    filter: brightness(1.03);
   }
 }
 
