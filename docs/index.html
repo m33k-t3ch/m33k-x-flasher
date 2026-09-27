@@ -89,27 +89,57 @@
         });
       };
 
-      const customizeInstallerDialogs = () => {
-        document.querySelectorAll("ewt-no-port-picked-dialog").forEach((dialog) => {
-          const root = dialog.shadowRoot;
-          if (!root) return;
+      const cleanNoPortDialog = (dialog) => {
+        const root = dialog.shadowRoot;
+        if (!root) return;
 
-          // Remove ESP Web Tools' driver-install help row/links from the
-          // "No port selected" dialog. Match broadly so wording changes
-          // don't make the links reappear.
+        const removeDriverHelp = () => {
           root.querySelectorAll("ol > li").forEach((item) => {
             const text = (item.textContent || "").toLowerCase();
+            const hasDriverLink =
+              item.querySelector('a[href*="silabs.com"]') ||
+              item.querySelector('a[href*="wch.cn"]') ||
+              item.querySelector('a[href*="driver"]');
+
             if (
               text.includes("drivers for common chips") ||
+              text.includes("right drivers installed") ||
               text.includes("install drivers") ||
-              text.includes("driver") ||
-              item.querySelector('a[href*="driver"]')
+              hasDriverLink
             ) {
               item.remove();
             }
           });
-        });
+        };
 
+        // CSS fallback: hide the driver-help row immediately even if ESP Web
+        // Tools re-renders it after our DOM cleanup.
+        if (!root.querySelector("#m33k-hide-driver-help")) {
+          const style = document.createElement("style");
+          style.id = "m33k-hide-driver-help";
+          style.textContent = `
+            ol > li:has(a[href*="silabs.com"]),
+            ol > li:has(a[href*="wch.cn"]),
+            ol > li:has(a[href*="driver"]) {
+              display: none !important;
+            }
+          `;
+          root.appendChild(style);
+        }
+
+        removeDriverHelp();
+
+        // ESP Web Tools renders this dialog asynchronously inside its own
+        // shadow root, so watch that root and clean it again after re-renders.
+        if (!dialog.__m33kDriverObserver) {
+          const shadowObserver = new MutationObserver(removeDriverHelp);
+          shadowObserver.observe(root, { childList: true, subtree: true });
+          dialog.__m33kDriverObserver = shadowObserver;
+        }
+      };
+
+      const customizeInstallerDialogs = () => {
+        document.querySelectorAll("ewt-no-port-picked-dialog").forEach(cleanNoPortDialog);
         styleInstallerRoot(document);
       };
 
