@@ -35,38 +35,61 @@ body {
 
 .eyebrow {
   margin: 0 0 8px;
-  letter-spacing: .35em;
-  color: var(--green);
-  font-weight: 800;
-  font-size: .78rem;
+  letter-spacing: .18em;
+  color: var(--pink);
+  font-weight: 900;
+  font-size: clamp(2.8rem, 8vw, 5.9rem);
+  line-height: .9;
+  text-shadow:
+    0 0 8px rgba(255,82,200,.95),
+    0 0 22px rgba(255,82,200,.72),
+    0 0 48px rgba(255,82,200,.42);
+  animation: m33k-brand-pulse 2.4s ease-in-out infinite;
 }
 
 h1 {
-  margin: 0;
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
-  line-height: .95;
+  margin: 10px 0 0;
+  font-size: clamp(1.75rem, 5vw, 3.35rem);
+  line-height: 1;
   color: var(--cyan);
   text-shadow:
-    0 0 8px rgba(85,238,255,.95),
-    0 0 20px rgba(85,238,255,.72),
-    0 0 42px rgba(85,238,255,.40);
+    0 0 7px rgba(85,238,255,.9),
+    0 0 18px rgba(85,238,255,.62),
+    0 0 34px rgba(85,238,255,.32);
   animation: m33k-title-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes m33k-brand-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 7px rgba(255,82,200,.82),
+      0 0 18px rgba(255,82,200,.58),
+      0 0 38px rgba(255,82,200,.30);
+    filter: brightness(.98);
+  }
+  50% {
+    text-shadow:
+      0 0 11px rgba(255,82,200,1),
+      0 0 30px rgba(255,82,200,.90),
+      0 0 62px rgba(255,82,200,.54);
+    filter: brightness(1.15);
+  }
 }
 
 @keyframes m33k-title-pulse {
   0%, 100% {
     text-shadow:
-      0 0 7px rgba(85,238,255,.78),
-      0 0 18px rgba(85,238,255,.55),
-      0 0 36px rgba(85,238,255,.28);
+      0 0 6px rgba(85,238,255,.72),
+      0 0 15px rgba(85,238,255,.48),
+      0 0 28px rgba(85,238,255,.24);
     filter: brightness(.96);
   }
   50% {
     text-shadow:
-      0 0 10px rgba(85,238,255,1),
-      0 0 28px rgba(85,238,255,.88),
-      0 0 58px rgba(85,238,255,.52);
-    filter: brightness(1.14);
+      0 0 8px rgba(85,238,255,.98),
+      0 0 22px rgba(85,238,255,.78),
+      0 0 42px rgba(85,238,255,.42);
+    filter: brightness(1.1);
   }
 }
 
@@ -262,6 +285,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .eyebrow,
   h1 {
     animation: none;
   }
