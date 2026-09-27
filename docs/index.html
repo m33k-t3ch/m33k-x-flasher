@@ -191,7 +191,7 @@
         columns = Array.from({ length: count }, (_, i) => ({
           x: i * fontSize,
           y: Math.random() * height,
-          speed: 28 + Math.random() * 52,
+          speed: 10 + Math.random() * 16,
           fontSize,
           pink: Math.random() < 0.18,
           skullTimer: Math.random() * 9
@@ -254,8 +254,7 @@
         const dt = Math.min((time - lastFrame) / 1000 || 0, 0.05);
         lastFrame = time;
 
-        ctx.fillStyle = "rgba(2,5,11,0.045)";
-        ctx.fillRect(0, 0, width, height);
+        ctx.clearRect(0, 0, width, height);
         ctx.textAlign = "center";
 
         for (const col of columns) {
@@ -264,7 +263,7 @@
 
           if (col.y > height + 30) {
             col.y = -30 - Math.random() * 180;
-            col.speed = 28 + Math.random() * 52;
+            col.speed = 10 + Math.random() * 16;
             col.pink = Math.random() < 0.18;
           }
 
@@ -274,13 +273,13 @@
           ctx.font = `800 ${col.fontSize}px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace`;
           ctx.fillStyle = `rgba(${isPink ? pink : cyan},${isPink ? 0.70 : 0.58})`;
           ctx.shadowColor = `rgba(${isPink ? pink : cyan},.55)`;
-          ctx.shadowBlur = 2;
+          ctx.shadowBlur = 1;
           ctx.fillText(char, col.x, col.y);
 
-          for (let t = 1; t <= 5; t++) {
+          for (let t = 1; t <= 7; t++) {
             const trailChar = chars[(Math.random() * chars.length) | 0];
-            const trailY = col.y - t * (col.fontSize * 0.9);
-            const alpha = Math.max(0.08, 0.38 - t * 0.06);
+            const trailY = col.y - t * (col.fontSize * 1.18);
+            const alpha = Math.max(0.10, 0.46 - t * 0.05);
             ctx.fillStyle = `rgba(${isPink ? pink : cyan},${alpha})`;
             ctx.fillText(trailChar, col.x, trailY);
           }
