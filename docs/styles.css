@@ -95,16 +95,20 @@ h1 {
 @keyframes m33k-brand-pulse {
   0%, 100% {
     text-shadow:
-      0 0 1px rgba(255,255,255,.80),
-      0 0 3px rgba(255,255,255,.12);
-    filter: brightness(1);
+      0 0 2px rgba(255,255,255,.95),
+      0 0 6px rgba(255,255,255,.52),
+      0 0 12px rgba(255,82,200,.42),
+      0 0 20px rgba(255,82,200,.22);
+    filter: brightness(1.02);
   }
   50% {
     text-shadow:
-      0 0 2px rgba(255,255,255,1),
-      0 0 5px rgba(255,255,255,.44),
-      0 0 9px rgba(255,255,255,.12);
-    filter: brightness(1.025);
+      0 0 3px rgba(255,255,255,1),
+      0 0 9px rgba(255,255,255,.92),
+      0 0 18px rgba(255,255,255,.38),
+      0 0 26px rgba(255,82,200,.50),
+      0 0 40px rgba(255,82,200,.24);
+    filter: brightness(1.08);
   }
 }
 
