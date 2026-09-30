@@ -68,6 +68,12 @@ For updates, choose **not to erase** when prompted if you want to preserve saved
 
 ## Firmware status
 
+**Current Watch beta:** `0.6.0i-public-beta`
+
+- Wardrive Wi-Fi session totals can exceed 56 observed networks.
+- Improved Wardrive scrolling and target-detail overlay recovery.
+- Retains C5-assisted 5 GHz discovery and reconnect behavior.
+
 Current firmware is a beta release and is being tested on real hardware before a stable release is announced.
 
 ## License
