@@ -68,7 +68,7 @@ For updates, choose **not to erase** when prompted if you want to preserve saved
 
 ## Firmware status
 
-**Current Watch beta:** `0.6.0i-public-beta`
+**Current Watch beta:** `0.6.0j-public-beta`
 
 - Wardrive Wi-Fi session totals can exceed 56 observed networks.
 - Improved Wardrive scrolling and target-detail overlay recovery.
