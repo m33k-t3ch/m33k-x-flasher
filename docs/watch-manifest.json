@@ -1,6 +1,6 @@
 {
   "name": "M33K X Watch",
-  "version": "0.6.0j-public-beta",
+  "version": "0.6.1-public-beta",
   "new_install_prompt_erase": true,
   "builds": [
     {

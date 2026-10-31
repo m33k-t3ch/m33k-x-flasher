@@ -68,10 +68,11 @@ For updates, choose **not to erase** when prompted if you want to preserve saved
 
 ## Firmware status
 
-**Current Watch beta:** `0.6.0j-public-beta`
+**Current Watch beta:** `0.6.1-public-beta`
 
-- Wardrive Wi-Fi session totals can exceed 56 observed networks.
-- Improved Wardrive scrolling and target-detail overlay recovery.
+- New M33K Arcade mini-games (endless Runner + top-down Wardrive) with arcade sound.
+- New LoRa Mesh Monitor: receive-only MeshCore decode of the public channel.
+- Animated weather and radar watch faces.
 - Retains C5-assisted 5 GHz discovery and reconnect behavior.
 
 Current firmware is a beta release and is being tested on real hardware before a stable release is announced.
